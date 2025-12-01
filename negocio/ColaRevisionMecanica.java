@@ -49,6 +49,9 @@ public class ColaRevisionMecanica {
         } else if (v instanceof modelo.Motocicleta) {
             ((modelo.Motocicleta) v).setEstadoMantenimiento(enumerativos.EstadoMantenimiento.PENDIENTE);
         }
+
+        v.resetearEstadoMantenimiento();
+        
         // Si tienes una clase Motocicleta, agrega esto también:
         /*
          * s

@@ -30,6 +30,10 @@ public abstract class Vehiculo implements IVehiculo, Serializable {
         this.id = contadorIds++;
     }
     
+    public abstract void
+    
+    resetearEstadoMantenimiento();
+
     // Constructor con parámetros
     public Vehiculo(String marca, String modelo, Integer anio, String color, 
                     CondicionVehiculo condicion, String identificador) {

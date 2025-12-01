@@ -143,4 +143,9 @@ public class Motocicleta extends Vehiculo implements IMantenible, ILavable {
         }
         return info.toString();
     }
+    @Override
+     public void resetearEstadoMantenimiento() {
+    // Usamos el setter que ya tienes definido en la clase
+    this.setEstadoMantenimiento(enumerativos.EstadoMantenimiento.PENDIENTE);
+  }
 }
