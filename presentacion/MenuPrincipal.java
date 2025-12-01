@@ -181,7 +181,17 @@ public class MenuPrincipal {
             Integer tipo = validador.leerOpcionMenu(1, 2);
 
             // Datos comunes
-            String id = validador.leerPatente("PATENTE del vehículo (ej: AAA000AA o AAA 000): ", false);
+           // Datos comunes
+            String id = null;
+            // Pedir patente y validar unicidad inmediatamente
+            while (true) {
+                id = validador.leerPatente("PATENTE del vehículo (ej: AAA000AA o AAA 000): ", false);
+                if (gestor.getInventario().buscarVehiculo(id) != null) {
+                    FormateadorSalida.imprimirAdvertencia("Ya existe un vehículo con esa patente. Ingrese otra patente diferente.");
+                } else {
+                    break;
+                }
+            }
             String marca = validador.leerTexto("Marca: ", false);
             String modelo = validador.leerTexto("Modelo: ", false);
             Integer anio = validador.leerEntero("Año: ", 1900, 2026);
